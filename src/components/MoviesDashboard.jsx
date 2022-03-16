@@ -36,10 +36,12 @@ export const MoviesDashboard = () => {
         {/* map throught th movie list and display the results */}
           {isLoading && <h1>Loading.....</h1>}
           {isError && <h1>Error</h1>}
-          {!isLoading && !isError && data && data.map((item)=>{
+          {!isLoading && !isError && data[0] && data[0].map((item)=>{
             return(
               <>
                    <h1>{item.movie_name}</h1>
+                   <img src={item.image_url} alt="" />
+                   <h2>{item.genre}</h2>
               </>
             )
           })}
